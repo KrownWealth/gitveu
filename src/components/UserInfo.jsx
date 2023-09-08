@@ -3,6 +3,10 @@ import axios from "@/app/axios";
 import Image from "next/image";
 
 const UserInfo = ({ userInfo }) => {
+  if (!userInfo) {
+    // Render a loading state or return null if userInfo is null
+    return <div>Loading User Information...</div>;
+  } 
   return (
     <div className="user-info">
       <div className="custom-image">

@@ -19,13 +19,13 @@ describe("UserInfo Component", () => {
     const { getByText, getByAltText } = render(<UserInfo userInfo={userInfo} />);
 
     // Assert that user info elements are rendered correctly
-    screen.getByAltText(`Avatar for ${userInfo.login}`).toBeInTheDocument();
-    screen.getByText(userInfo.name).toBeInTheDocument();
-    screen.getByText(userInfo.login).toBeInTheDocument();
-    screen.getByText(userInfo.bio).toBeInTheDocument();
-    screen.getByText(`${userInfo.followers} Follower`).toBeInTheDocument();
-    screen.getByText(`${userInfo.following} Following`).toBeInTheDocument();
-    screen.getByText(userInfo.location).toBeInTheDocument();
+    expect(screen.getByAltText(`Avatar for ${userInfo.login}`)).toBeInTheDocument();
+    expect(screen.getByText(userInfo.name)).toBeInTheDocument();
+    expect(screen.getByText(userInfo.login)).toBeInTheDocument();
+    expect(screen.getByText(userInfo.bio)).toBeInTheDocument();
+    expect(screen.getByText(`${userInfo.followers} Follower`)).toBeInTheDocument();
+    expect(screen.getByText(`${userInfo.following} Following`)).toBeInTheDocument();
+    expect(screen.getByText(userInfo.location)).toBeInTheDocument();
   });
 
   it("renders loading state if userInfo is null", () => {
@@ -33,6 +33,6 @@ describe("UserInfo Component", () => {
     const { getByText } = render(<UserInfo userInfo={null} />);
 
     // Assert that loading state is rendered
-    screen.getByText("Loading avatar...").toBeInTheDocument();
+    expect(screen.getByText("Loading User Information...")).toBeInTheDocument();
   });
 });

@@ -1,5 +1,6 @@
 'use client'
 import React, { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
 import UserInfo from "./UserInfo";
 import UserRepos from "./UserRepos";
 import Nav from "./Nav";
@@ -8,7 +9,10 @@ import axios from "../app/axios";
 import Link from "next/link";
 
 
-const UserDetail = ({ login }) => {
+const UserDetail = () => {
+  //To get the login string 
+  const { login } = useParams();
+
   const [userInfo, setUserInfo] = useState([]);
   const [userRepos, setUserRepos] = useState([]);
 
