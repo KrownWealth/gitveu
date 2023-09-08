@@ -24,12 +24,13 @@ This is basically a standalone list with dynamic user rendering. In the list use
 * A "Laod More" button in the repo display section updates the displayed repos.
 
 ## Tech Stack used:
-**React.js**
-**Next.js**
-**CSS**
+* React.js 18.2.0 
+* Next.js version 13 
+* CSS
 
 ## Dependencies
-** Next Js Version 10
+** Next Js Version 13
+
 
 ## Getting Started
 
